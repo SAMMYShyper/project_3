@@ -117,6 +117,10 @@ public:
 			print_external_preorder(root->children[i]);
 		}
 	}
+
+	// ###########note for next person to code #############
+	// We now need to put the function in part C. of the pdf: tree analysis; including binary tree checker, proper, perfect, and balanced
+	// after that its pretty much just getting the writing in main: file i/o and user interface (via terminal prob)
 };
 
 
