@@ -107,6 +107,14 @@ public:
 			print_external_preorder(root->children[i]);
 		}
 	}
+<<<<<<< HEAD
+=======
+
+	// ###########note for next person to code #############
+	// We now need to put the function in part C. of the pdf: tree analysis; including binary tree checker, proper, perfect, and balanced
+	// after that its pretty much just getting the writing in main: file i/o and user interface (via terminal prob)
+};
+>>>>>>> 8a7949ada4b54bad6dbeb9ab65f58c1473f6dd3d
 
 	bool binary_detector(Node *root) { // recursive checker
 		if (root == NULL) { 
