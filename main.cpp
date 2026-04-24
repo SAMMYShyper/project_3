@@ -4,6 +4,7 @@
 using namespace std;
 #include <iostream>
 #include <vector>
+#include <string>
 
 class Node { // need the data, pointer to left & right child, optional parent 
 public:
@@ -107,14 +108,10 @@ public:
 			print_external_preorder(root->children[i]);
 		}
 	}
-<<<<<<< HEAD
-=======
 
 	// ###########note for next person to code #############
 	// We now need to put the function in part C. of the pdf: tree analysis; including binary tree checker, proper, perfect, and balanced
-	// after that its pretty much just getting the writing in main: file i/o and user interface (via terminal prob)
-};
->>>>>>> 8a7949ada4b54bad6dbeb9ab65f58c1473f6dd3d
+	// after that its pretty much just getting the writing in main: file i/ and user interface (via terminal prob)
 
 	bool binary_detector(Node *root) { // recursive checker
 		if (root == NULL) { 
@@ -123,13 +120,58 @@ public:
 		if (root->children.size() > 2) {
 			return false;
 		}
-		for (int i = 0; root->children.size(); i++) {
-			binary_detector(root->children[i]);
+		for (int i = 0; i < root->children.size(); i++) {
+			if(!binary_detector(root->children[i])) {
+				return false;
+			}
 		}
+		return true;
 	}
+
+	bool proper_detector(Node *root) {
+		if (root == NULL) {	
+			return true;
+		}
+		if (root->children.size() != 0 && root->children.size() != 2) {	// if there aren't 0 or 2 children, then its not proper
+			return false;
+		}
+		for (int i = 0; i < root->children.size(); i++) { // recursively iterates
+			if (!proper_detector(root->children[i])){ 
+				return false;
+			}
+		}
+		return true;
+	}	
+/*
+	bool perfect_detector(Node *root, int height) { // returns true if full, no missing children, equal height leaves
+		
+	}
+*/
+
 };
 
 int main() {
+//	Tree t;
+//	t.add_root();
+//	Node *r = t.get_root();
+
+	// we follow that tree constructor takes (data, data_label "yes"/"no", level, prerder pos, parent (possibly)
+
+
 	
+	// ###tree properties : root node, no. internal node, no. external node, tree height, internal nodes, external
+	cout << "-----------\nTree Properties\n------------" << endl;
+
+	cout << "-----------\nBinary Tree Properties\n----------" << endl;
+
+
+	// ###user exploration###
+	string user_input;
+	while (user_input != "exit") {
+	// here we're gonna let the user explore the tree
+		
+	}
+		
+	cout << "Goodbye!" << endl;
 	return 0;
 }
