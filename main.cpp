@@ -1,15 +1,5 @@
-
-// learning to build linked tree data structure
 // each node stores element 
 // pointer to left child, right child, optionally parent
-// typically provide:
-// 	T.add_root(e)
-// 	T.add_left(p, e)
-// 	T.add_right(p,e)
-// 	T.replace(p, e)
-// 	T.delete(p)
-// 	T.attach(p, T1, T3)
-
 
 using namespace std;
 #include <iostream>
@@ -117,8 +107,19 @@ public:
 			print_external_preorder(root->children[i]);
 		}
 	}
-};
 
+	bool binary_detector(Node *root) { // recursive checker
+		if (root == NULL) { 
+			return true;
+		}
+		if (root->children.size() > 2) {
+			return false;
+		}
+		for (int i = 0; root->children.size(); i++) {
+			binary_detector(root->children[i]);
+		}
+	}
+};
 
 int main() {
 	
